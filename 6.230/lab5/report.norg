@@ -1,0 +1,105 @@
+* Meeting Times
+  - 03/02/2025 7:30, everyone,  4hrs
+  - 03/03/2025 10:30, everyone, 6hrs
+
+* Parts Discussed/Completed
+  - Problem 4 on PSET 3
+  - All lab
+
+* Notes
+  - Long/Short Ethernet CAT6 Cables
+  - Ethernet charactersitic impedence 100 Ohms +/-15%
+  - Frequency up to 250Mhz but higher almost always works
+  - Shorter cable about 1.5ft
+  - Long cable measured with ruler 10.5ft
+  - Bandpass is not valid for TDR
+  - Step lets us observe how the signal changes over time
+
+* Procedure
+  - Start stop freq 50khz 500Mhz
+  - Set points to 114
+  - Set exitation to STEP
+  - Enable transform
+  - Set trace format to REAL
+  - Calibrate to end of short ethernet cable
+
+* Q1
+  {short_open.jpg} [Short Cable Open]
+  The short cable itself is close to a perfect positive (+1) step response with no delay.
+  {long_open.jpg} [Long Cable Open]
+  The long calbe itself is close to a perfect positive (+1) step response with the delay of the extra length.
+  This makes sense because the cable itself is open for both cables, the only difference is the delay.
+  It also makes sense that the reflection coefficient is close to 1 because its an open reflection
+
+* Q2
+  Propegation speed is around 70% of c (speed of light)
+  This is because of the permitivity of the material (epsilon)
+  Delay to slope is 23ns
+  Round trip = 23ns * 0.7 * c = 4.8m
+  Single trip = 2.4m = 7.9ft
+  We add the length of the short cable because of the location of our calibration to get length = 9.4ft
+
+  In reality this is a bit shorter than the actual cable length but this is probably because our cable has slightly
+  more velocity factor (maybe 0.75) than what wikepedia says.
+  This means in reality our cable has slightly less permittivity than the wikipedia ones.
+
+* Q3
+  {long_open.jpg} [Long Cable Open]
+  For open, it delays then goes to reflection coefficient 1
+  {long_short.jpg} [Long Cable Short]
+  For short, it delays then goes to reflection coefficient -1
+  {long_match.jpg} [Long Cable Match]
+  For matched, it stays at roughly reflection coeffecient 0
+  {long_r1.jpg} [Long Cable R1]
+  For R1, it still reflects at the same time delay, however to coefficient of 0.38, not 1
+
+  Yes this matches our expectations
+  $Γ = 0.38 = (Z_L - Z_0)/(Z_L + Z_0)$
+  $Z_0 = 100$
+  $0.38*Z_L + 0.38*Z_0 = Z_L - Z_0$
+  0.62*Z_L = 1.38*Z_0
+  Z_L = 2.23*Z_0
+  Z_L = 223 Ohm
+
+  I think the precision of the measurement is not to great and between me and my teammate we got a variance of 5%
+  I think this is because our cables have slightly different impedences as well as the descretation of frequencies
+  sent out the vna makes the measurements a bit off, and also probably the soldering too.
+  This makes me think the accuracy of the measurement is somewhere 5-15%
+
+* Q4
+** L4
+    {long_l4.jpg} [Long Cable L4]
+    P1: 25.6ns, 0.6
+    $Difference left = 1.55$
+    $1 Tau of decay ~= 0.6 - 0.63*1.55 = -0.38$
+    P2: 38.8ns, -0.38
+    $Tau = 36.1-25.6 = 10.5ns$
+    $Tau = L/R$
+    $R = Z_0 = 100 Ohm$
+    $L = 13.2ns * 100 = 1.05uH$
+** C1
+    {long_c1.jpg} [Long Cable C1]
+    P1: 25.6ns, -0.45
+    $Difference left = 1.45$
+    $1 Tau of decay ~= -0.45 + 0.63*1.45 = 0.46$
+    P2: 37.9ns, 0.47
+    $Tau = 37.9-25.6 = 12.3ns$
+    $Tau = R*C$
+    $R = Z_0 = 100 Ohm$
+    $C = 13.2ns / 100Ohm = 132pF$
+
+    We both got around 130pF which we assume to be that there is most likely around 30pF of stray capacitance
+    in the ethernet connector jack itself.
+    This would mean the capacitor capacitance is 100pF
+
+* Q5
+  {long_mystery.jpg} [Long Cable Mystery]
+  Exponential straight from reflection time means that for the instant that $Z_C = 0$, $Z_R = Z_0$
+  because no reflection step
+  $Z_R = Z_0$
+  P1: 23ns, 0.02
+  P2: 36.1ns, 0.64
+  $Tau = 13.1ns$
+  $Tau = R*C$
+  $R = Z_R + Z_0 = 200$
+  $C = 13.1ns / 200 = 66pF$

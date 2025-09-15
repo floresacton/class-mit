@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\begin{document}
+
+\title{Mo Dividers}
+\author{}
+\date{\today}
+
+\maketitle
+
+\section{}
+
+Firstly we know that $i_1$ will always be 2A because of the current source.
+\newline
+Next we can solve for $i_2$ by finding the equivalent resistance of the three resistors
+in parrallel, then calculating the current divider. $6\Omega$ $||$ $12\Omega$ =
+$4\Omega$ and $4\Omega$ $||$ $4\Omega$ = $2\Omega$. Therefore the current divider means
+that $i_2$ = 2A*($2\Omega$/$12\Omega$) = $1/3$A
+\newline
+\newline
+Since we have no voltage source and know that the resistance across $v$ is $20\Omega$,
+we have to calculate $v$ using V = I$\times$R: V = (-2A)*($20\Omega$) = -40V
+
+\section{}
+
+We already know that $i_1$ has to be 2A because of the current source. However
+for calculating $v$ and $i_2$ we can now use the voltage source and resistor divider
+logic and ignore the current source. From earlier, the equivalent resistance of the three
+resistors is $2\Omega$ which means the total resistance across the section is
+$2\Omega + 20\Omega = 22\Omega$. This means the current through the equivalent resistor
+is 90V/$22\Omega$. Based on the current divider principle, $i_2$ should then be
+(90/22)A*($2\Omega$/$12\Omega$)=(15/22)A.
+\newline
+$v$ can then be calculated by the resistor
+devider equation of 90V*($20\Omega/22\Omega$) = (900/11)V
+
+
+\end{document}

@@ -1,0 +1,215 @@
+=============================================================
+RESULTS FOR TEST CASE: test_play_game_short
+WORD USED IN TEST: octave
+GUESSED LETTERS IN ORDER OF GUESS: ['cranky', 'alcove', 'octave']
+************************
+YOUR OUTPUT:
+************************
+Loading word list from file...
+   55900 words loaded.
+Oops! The word length is not correct.
+Oops! The word length is not correct.
+Oops! The word length is not correct.
+Oops! The word length is not correct.
+Oops! The word length is not correct.
+Oops! The word length is not correct.
+Oops! The word length is not correct.
+Oops! The word length is not correct.
+
+************************
+POSSIBLE CORRECT OUTPUT:
+************************
+Loading word list from file...
+   55900 words loaded.
+Welcome to the game Wordle!
+I am thinking of a word that is 6 letters long.
+You have 3 warnings remaining.
+You have 6 guesses left.
+Please guess a word: cranky
+WORDLE response:
+c _ a _ _ _
+Alphabet HINT:
+/a/ b /c/ d  e  f  g  h  i  j  _  l  m  _  o  p  q  _  s  t  u  v  w  x  _  z 
+--------------
+You have 5 guesses left.
+Please guess a word: alcove
+WORDLE response:
+c _ a _ _ _
+a _ c o V E
+Alphabet HINT:
+/a/ b /c/ d |E| f  g  h  i  j  _  _  m  _ /o/ p  q  _  s  t  u |V| w  x  _  z 
+--------------
+You have 4 guesses left.
+Please guess a word: octave
+Congratulations, you won!
+You guessed the correct word in 3 tries!
+Your total score is 18.
+=============================================================
+
+
+=============================================================
+RESULTS FOR TEST CASE: test_play_game_short_fail
+WORD USED IN TEST: none
+GUESSED LETTERS IN ORDER OF GUESS: ['deaf', 'more', 'hope', 'sole', 'joke', 'tone']
+************************
+YOUR OUTPUT:
+************************
+
+************************
+POSSIBLE CORRECT OUTPUT:
+************************
+Loading word list from file...
+   55900 words loaded.
+Welcome to the game Wordle!
+I am thinking of a word that is 4 letters long
+You have 3 warnings remaining
+You have 6 guesses left.
+Please guess a word: deaf
+WORDLE response:
+_ e _ _
+Alphabet HINT:
+ _  b  c  _ /e/ _  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z 
+----------
+You have 5 guesses left.
+Please guess a word: more
+WORDLE response:
+_ e _ _
+_ O _ E
+Alphabet HINT:
+ _  b  c  _ |E| _  g  h  i  j  k  l  _  n |O| p  q  _  s  t  u  v  w  x  y  z 
+----------
+You have 4 guesses left.
+Please guess a word: hope
+WORDLE response:
+_ e _ _
+_ O _ E
+_ O _ E
+Alphabet HINT:
+ _  b  c  _ |E| _  g  _  i  j  k  l  _  n |O| _  q  _  s  t  u  v  w  x  y  z 
+----------
+You have 3 guesses left.
+Please guess a word: sole
+WORDLE response:
+_ e _ _
+_ O _ E
+_ O _ E
+_ O _ E
+Alphabet HINT:
+ _  b  c  _ |E| _  g  _  i  j  k  _  _  n |O| _  q  _  _  t  u  v  w  x  y  z 
+----------
+You have 2 guesses left.
+Please guess a word: joke
+WORDLE response:
+_ e _ _
+_ O _ E
+_ O _ E
+_ O _ E
+_ O _ E
+Alphabet HINT:
+ _  b  c  _ |E| _  g  _  i  _  _  _  _  n |O| _  q  _  _  t  u  v  w  x  y  z 
+----------
+You have 1 guesses left.
+Please guess a word: tone
+WORDLE response:
+_ e _ _
+_ O _ E
+_ O _ E
+_ O _ E
+_ O _ E
+_ O _ E
+Alphabet HINT:
+ _  b  c  _ |E| _  g  _  i  _  _  _  _  /n/ |O| _  q  _  _  _  u  v  w  x  y  z 
+Sorry, you ran out of guesses. The word was none.
+=============================================================
+
+
+=============================================================
+RESULTS FOR TEST CASE: test_play_game_warnings
+WORD USED IN TEST: none
+GUESSED LETTERS IN ORDER OF GUESS: ['deaf', 'more', 'hope', 'sole', 'joke', 'tone']
+************************
+YOUR OUTPUT:
+************************
+Welcome to the game Wordle!
+I am thinking of a word that is 4 letters long.
+You have 3 warnings remaining.
+You have 6 guesses left.
+Oops! That is not a real word.
+You have 2 warnings remaining.
+----------
+You have 6 guesses left.
+Oops! That is not a valid word.
+You have 1 warnings remaining.
+----------
+You have 6 guesses left.
+Oops! The word length is not correct.
+You have 0 warnings remaining.
+----------
+You have 6 guesses left.
+Oops! That is not a valid word.
+You have 0 warnings remaining.
+----------
+You have 5 guesses left.
+Oops! That is not a valid word.
+You have 0 warnings remaining.
+----------
+You have 4 guesses left.
+WORDLE response:
+_ e _ _
+Alphabet HINT:
+ _  b  c  _ /e/ _  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z 
+----------
+You have 3 guesses left.
+Congratulations, you won!
+You guessed the correct word in 4 tries!
+Your total score is 6.
+
+************************
+POSSIBLE CORRECT OUTPUT:
+************************
+Loading word list from file...
+   55900 words loaded.
+Welcome to the game Wordle!
+I am thinking of a word that is 4 letters long
+You have 3 warnings remaining
+You have 6 guesses left.
+Please guess a word: abcd 
+Oops! That is not a real word.
+You have 2 warnings remaining.
+----------
+You have 6 guesses left.
+Please guess a word: 1234 
+Oops! That is not a valid word.
+You have 1 warnings remaining.
+----------
+You have 6 guesses left.
+Please guess a word: a!222 
+Oops! That word length is not correct.
+You have 0 warnings remaining.
+----------
+You have 6 guesses left.
+Please guess a word: 2@39
+Oops! That is not a valid word.
+You have 0 warnings remaining.
+----------
+You have 5 guesses left.
+Please guess a word: aa88
+Oops! That is not a valid word.
+You have 0 warnings remaining.
+----------
+You have 4 guesses left.
+Please guess a word: deaf
+WORDLE response:
+_ e _ _
+Alphabet HINT:
+ _  b  c  _ /e/ _  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z 
+----------
+You have 3 guesses left.
+Please guess a word: none
+WORDLE response:
+Congratulations, you won!
+You guessed the correct word in 4 tries!
+Your total score is 6.
+=============================================================
+
+

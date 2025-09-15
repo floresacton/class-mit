@@ -1,0 +1,38 @@
+name: Merge Grading Files
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  merge-grading-files:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.9"
+
+    - name: Run generate.py
+      run: |
+        python generate.py
+
+    - name: Upload merged file as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: merged-grading
+        path: README.md
+
+    - name: Commit and push the merged file
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        
+        git add -f README.md
+        git commit -m "Automated merge of grading.md and dates.md files"
+        git push origin main

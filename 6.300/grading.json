@@ -1,0 +1,30 @@
+[
+  {
+    "type": "Participation",
+    "percent": 0.05
+  },
+  {
+    "type": "Exercises",
+    "percent": 0.05
+  },
+  {
+    "type": "Labs",
+    "percent": 0.15
+  },
+  {
+    "type": "Problems",
+    "percent": 0.2
+  },
+  {
+    "type": "Quiz 1",
+    "percent": 0.1
+  },
+  {
+    "type": "Quiz 2",
+    "percent": 0.2
+  },
+  {
+    "type": "Final",
+    "percent": 0.25
+  }
+]

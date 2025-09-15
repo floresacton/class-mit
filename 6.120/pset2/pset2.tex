@@ -1,0 +1,92 @@
+\documentclass{61200}
+\usepackage{multicol}
+
+\author{Miguel Flores-Acton}
+\problemset{2}
+
+\begin{document}
+
+\problem{1}{None}
+$\mathbf{Case: d>20}$
+If $d \le 20$, then that means that $a,b,c \le 20$. Adding together $a,b,c$
+we get that $a+b+c+d \le 80$. Plugging in the values to the equation
+$100-(\le80) = e$. We get that $e \ge 20$. \qed
+
+\problem{2}{None}
+If log$_2 3$ is rational, then it can be represented by $a\over{b}$ where a and b
+are coprime natural numbers. We can rearange the inequality to $2^{p\over{q}}=3$
+and further to $2^a=3^b$. This means that 2 is only $2^a$ is only divisible by 2
+and $3^b$ is only divisible by 3. Since both 2 and 3 are prime numbers, this will
+never be true except for zero, and we know that log$_2 3$ is a non zero number. \qed
+
+\problem{3}{None}
+$\mathbf{Proof:}$
+
+The proof is by induction, using the inductive hypothesis
+$F(n)F(n+1)=F(0)^2 + F(1)^2+\ldots+F(n)^2$
+
+$\mathbf{Base Case:}$
+
+$F(0)^2=F(0)\times F(1)$: $0=0$ is true
+
+% $F(0)^2+F(1)^2=F(1)\times F(2)$: $1=1$ is true
+
+$\mathbf{Inductive Step:}$
+
+If we're trying to evaluate $F(n)\times F(n+1)$ that means by induction
+$F(n-1)\times F(n)$ is assumed to be true, therefore:
+
+Assume $n\geq1$
+$F(n-1)\times F(n) + F(n)^2 = F(n)\times F(n+1)$
+
+$F(n)\times (F(n-1) + F(n))= F(n)\times F(n+1)$
+
+And we know that because of the fibbonacci sequence
+$F(n-1) + F(n) = F(n+1)$, so:
+
+$F(n)\times F(n+1)= F(n)\times F(n+1)$
+
+This means that $\forall n \in \mathbb{N} . F(n)F(n+1)=F(0)^2 + F(1)^2+\ldots+F(n)^2$
+\qed
+
+\problem{4}{None}
+\problempart{a}
+
+
+\problempart{b}
+Shivam never mentions $x_1$>0, however just brings it out of thin air
+in the end of the inductive step.
+
+\problempart{c}
+Zach's problem is that when saying the statment $x_i=4x_{i-1}$ for all
+$i\ge0$ he is wrong. Also, in the $x_{i+1}=6x_i-8x_{i-1}$, when $i=1$
+$8x_{i-1}$ relys on $x_0$ which is not defined.
+
+\problempart{d}
+$\mathbf{Proof:}$
+
+Using regular induction on the hypothesis $R(i):= "x_i \geq3x_{i-1} AND x_i>0$". 
+
+
+
+\problem{5}{None}
+\problempart{a}
+$P(k):=$ "for all pairs $m,n>0$ with $m\times n = k$, we have $(k-1)$ is
+the splits needed to break up the chocolate bar"
+
+\problempart{b}
+$\mathbf{Proof:}$
+
+The proof is by induction, using $P(k)$ as our inductive hypothesis
+
+$\mathbf{Base Case:}$
+
+If $k=1$ then $m,n=1$ and there are no splits we have to do.
+And $k-1=0$
+
+$\mathbf{Inductive Step:}$
+
+
+
+\end{document}
+

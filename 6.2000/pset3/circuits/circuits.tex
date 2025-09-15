@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\begin{document}
+
+\title{Solving Circuits}
+\author{}
+\date{\today}
+
+\maketitle
+
+\section*{1}
+
+\noindent Ben is wrong on his first step because he assumes that the voltage
+drop across the resistor is 20V, however that is the voltage drop
+across both resistors.
+
+\noindent To solve for the current, first find the equivalent resistance
+which is $5\Omega$, meaning the current is $\text{20V}/ 5\Omega = \text{4A}$.
+
+\noindent He is correct that by KCL, the current in the $1\Omega$ resistor is also
+4A, and therefore $\text{4A}\times1\Omega=\text{4V}$. So $v_1=\text{4V}$.
+
+\section*{2}
+
+\noindent Ben is again wrong on his first step. The resistors are not in parralel,
+but in series connecting to the battery. Therefore the equivalent resistance is not
+$3\Omega$, but actually $16\Omega$.
+
+\noindent Finishing to solve the circuit we repeat the rest of Ben's steps and get
+that the current through the circuit is $\text{9V}/16\Omega=9/16\text{A}$.
+Then $v_2=9/16\text{A}*12\Omega=27/4\text{A}$
+
+\section*{3}
+
+\noindent Yay! Ben solved it correctly.
+
+\section*{4}
+
+\noindent Here, Ben just messed up his math with calculating the equivalent resistance
+of $6\Omega$ and $10\Omega$. It should be $1/(1/6\Omega+1/10\Omega)=\frac{15}{4}\Omega$.
+
+\noindent Continuing his steps, the total resistance is $2+15/4=23/4$ $\Omega$. Then
+$2/(23/4)=8/23\text{ A}$. Then $8/23\text{ A}\times15/4\text{ }\Omega=30/23$ V.
+
+\noindent Then finally,
+the voltage drop $v_4=\text{8V}+30/23\text{ V}$
+
+\section*{5}
+
+\noindent Here, Ben is assuming that the 12V source is grounded, but it's not, so we actually
+need to perform nodal analysis.
+
+\noindent Before preforming nodal analysis, we should probably make our life easier by
+swapping the 12V source with the $4\Omega$ resistor, to create a Thevanin equivalent
+circuit of those two components. This makes it where there are no floating voltage sources
+and makes our lives easier.
+
+\noindent Now our equation for $e_1$ becomes $(9-e_1)+(12-e_1)/4=e_1/2$
+
+\noindent Solving this for $e_1$ with algebra comes to $e_1=48/7\text{ V}$
+
+\noindent Finally solving for $v_5$, we get $v_5=9\text{V}-48/7\text{ V}=15/7\text{ V}$
+
+\end{document}

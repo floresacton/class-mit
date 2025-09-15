@@ -1,0 +1,69 @@
+\documentclass{article}
+
+\begin{document}
+
+{\tiny
+\title{Pset1 - KVL Consistency}
+\date{}
+
+\maketitle
+}
+
+\section{Approach}
+In approaching this problem the first thing that came to
+my mind was seeing where Kirchhoff's Voltage Law failed
+within the smaller four loops.
+\newline
+\newline
+Calculating the loops counterclockwise comes to:
+\newline
+Upper left loop: - 4V - (-1V) - 2V + 5V = 0V
+\newline
+Upper right loop: 4V - 5V + 2V + 3V = 4V
+\newline
+Bottom right loop: - 2V - (-3V) - 5V + 0V = -4V
+\newline
+Bottom left loop: 2V - 5V + 4V + (-3V) = -2V
+
+\section{Analyzing}
+Seeing that only the upper left loop passes
+Kirchhoff's Voltage Law and the other ones fail
+it gives a hint to which voltages shouldn't be changed.
+If changing any component in the top left loop, then
+another component in the same loop would also be changed to
+satisfy the law, meaning the bottom left loop would still be
+broken. This removes A, C, D, and F from possibly being changed.
+\newline
+\newline
+Looking at the change of voltages through a signle loop,
+the two right loops stand out in that they have the same offset.
+When thinking more about this, it actually means that both circuits
+can be corrected by changing component G because it is counted in
+opposite directions when circulating counter clockwise.
+\newline
+\newline
+With this we can recalculate the upper left and right
+loops with G as a variable and see that both evaluate to G = -2V:
+\newline
+Upper right loop: 4V - 5V + (G) + 3V = 0V $\rightarrow$ G = -2V
+\newline
+Bottom right loop: - (G) - (-3V) - 5V + 0V = 0V $\rightarrow$ G = -2V
+
+\section{Second Change}
+Now that we've concluded that component G should change
+to -2V, all that is left is the bottom left loop. Here it's
+actually possible to change H or K because both of them only
+affect this loop.
+\newline
+\newline
+Solving for either we get:
+\newline
+Bottom left loop: 2V - (H) + 4V + (-3V) = 0 $\rightarrow$ H = 3V
+\newline
+Bottom left loop: 2V - 5V + (K) + (-3V) = 0 $\rightarrow$ K = 6V
+
+\section{Conclusion}
+Final conclusion is that G = -2V for the first component
+change and either H = 3V or K = 6V for the second change.
+
+\end{document}

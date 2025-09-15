@@ -1,0 +1,26 @@
+[
+  {
+    "type": "Staff Grade",
+    "percent": 0.1
+  },
+  {
+    "type": "Homework",
+    "percent": 0.1
+  },
+  {
+    "type": "Labs",
+    "percent": 0.1
+  },
+  {
+    "type": "Quiz 1",
+    "percent": 0.15
+  },
+  {
+    "type": "Quiz 2",
+    "percent": 0.15
+  },
+  {
+    "type": "Project (TODO explain parts)",
+    "percent": 0.4
+  }
+]

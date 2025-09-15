@@ -1,0 +1,22 @@
+[
+  {
+    "type": "Labs (6)",
+    "percent": 0.06
+  },
+  {
+    "type": "Homework (9 of 10)",
+    "percent": 0.12
+  },
+  {
+    "type": "Quiz 1",
+    "percent": 0.24
+  },
+  {
+    "type": "Quiz 2",
+    "percent": 0.24
+  },
+  {
+    "type": "Final",
+    "percent": 0.34
+  }
+]

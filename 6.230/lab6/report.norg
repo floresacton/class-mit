@@ -1,0 +1,79 @@
+* Meeting Times
+  - 03/08/2025 8, everyone, XXX
+
+* Parts Discussed/Completed
+  - All lab
+
+* Notes
+  - Make sure sweeps are complete for calubration
+
+* Procedure
+  - Frequency range 100khz to 1.5ghz
+  - 201 points
+  - Calibrate
+
+* Q1
+** a
+   - Proper calibration
+** b
+   - Hand calc
+   - $h/w*sqrt(μ/ε) = 50 Ohm$
+   - $w = 5.9mm$
+   - Because of fringe feilds should be smaller impedence because C is greater
+   - So realistic should be lower
+   - Calculator says 3.1mm
+   - I got it good at 3mm
+** c
+   - Ok fabricated
+** d
+   - Ok termination placed
+** e
+   - S_11 at 1Ghz = -32dB
+** f
+   - Max S_11 over the frequMency range was -23dB
+   - I litterally somehow got it first try from last lab
+
+* Q2
+** a
+   - Ok desoldered
+** b
+   - Ok soldered 100 ohm resistor
+** c
+   - Reflection coefficient $(100-50)/(100+50) = 1/3$
+   - $S_11 = 20 log(1/3) = -9.5 dB$
+   - I measured -8.8 dB
+   - For some reason the 600Mhz to 1200Mhz is a bit high but besides that it matches pretty well
+
+* Q3
+** a
+   - Z_L = 100 Ohm
+   - $Z(D) = Z_0^2/Z_L = 50 Ohm$
+   - $Z_0 = sqrt(50*100) = 70.7 Ohm$
+   - $h/w*sqrt(μ/ε) = 70.7 Ohm$
+   - $w = 4.2mm$
+   - With fringing feilds, w should be smaller
+   - $ideal w = 1.68mm$
+   - effective dielectric is $ε = ε_0*3.05$
+   - for permitivity 4.2, v = 1.5e10
+   - $f = 1Ghz$
+   - $lambda = v/f = 146mm$
+   - $lambda/4 = 36.6mm$
+   - Using effective dielectric constant
+   - $ideal lambda = 172mm$
+   - $ideal lambda/4 = 42.9mm$
+
+** b
+   - First cut width until hit the 50 Ohm mark
+   - Then cut more length until negative peak decreased to 1Ghz
+
+** c
+   - 1GHz should be negative infinity dB because perfect matching
+   - Variance from the target impedence causes increase in dB
+   - So as we cut it thinner the peak gets bigger (more negative)
+   - If we cut the quarter wave too short, the peak is at a higher frequency
+   - So as we cut the quarter wave section shorter, the frequency decreases towards 1Ghz
+
+** d
+   - Yea it preforms like expected
+   - It is very frequency dependent, so it reflects more as we stray from 1Ghz
+   - Far away from 1.5Ghz refection coeffecient is that of the 100 Ohm resistor (-9.5 dB)

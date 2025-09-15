@@ -1,0 +1,147 @@
+\documentclass{61200}
+\usepackage{multicol}
+
+\author{Miguel Flores-Acton}
+\problemset{1}
+
+\begin{document}
+
+\problem{1}{None}
+
+\problempart{a}
+Ten people is too many people, so it violates policy.
+
+\problempart{b}
+This is most likely working too closely together because you are both
+typing your solutions together which violates collaboration policy.
+
+\problempart{c}
+This also counts as working too closely together and also, your
+reciting the solution to your friend which is not allowed.
+
+\problempart{d}
+This is not ok, because you cannot help others given that you've already
+done and completed the assignment.
+
+\problempart{e}
+It is not allowed to share any part of your solution with someone else.
+
+\problempart{f}
+Again, it is not allowed to share your answer with someone else.
+
+\problempart{g}
+It's not allowed to refrence previos work whether yours or not for the class.
+
+\problempart{h}
+As you are just copying an answer and not deriving it yourself,
+this is not allowed.
+
+\problempart{i}
+Similar to the last situation, you or your peers are not deriving the solution,
+just copying it so it is not allowed.
+
+\problempart{j}
+Just as it is not allowed to look at the answer from others, it is not ok
+to look at answer the answer before completing your assignment.
+
+\problem{2}{None}
+
+\problempart{a}
+
+
+\begin{multicols}{2}
+    \begin{center}
+        \begin{tabular}{||c | c | c | c | c||}
+            \hline
+            A & B & C & B$\rightarrow$C & A$\rightarrow$(B$\rightarrow$C) \\ [0.5ex]
+            \hline\hline
+            0 & 0 & 0 & 1 & 1 \\
+            \hline
+            0 & 0 & 1 & 1 & 1 \\
+            \hline
+            0 & 1 & 0 & 0 & 1 \\
+            \hline
+            0 & 1 & 1 & 1 & 1 \\
+            \hline
+            1 & 0 & 0 & 1 & 1 \\
+            \hline
+            1 & 0 & 1 & 1 & 1 \\
+            \hline
+            1 & 1 & 0 & 0 & 0 \\
+            \hline
+            1 & 1 & 1 & 1 & 1 \\
+            \hline
+        \end{tabular}
+    \end{center}
+    
+    \columnbreak
+
+    \begin{center}
+        \begin{tabular}{||c| c | c | c | c | c||}
+            \hline
+            A & B & C & \scriptsize(A$\rightarrow$B) & \scriptsize(A$\rightarrow$C) & \tiny((A$\rightarrow$B)$\rightarrow$(A$\rightarrow$C))\\ [0.5ex]
+            \hline\hline
+            0 & 0 & 0 & 1 & 1 & 1 \\
+            \hline
+            0 & 0 & 1 & 1 & 1 & 1 \\
+            \hline
+            0 & 1 & 0 & 1 & 1 & 1 \\
+            \hline
+            0 & 1 & 1 & 1 & 1 & 1 \\
+            \hline
+            1 & 0 & 0 & 0 & 0 & 1 \\
+            \hline
+            1 & 0 & 1 & 0 & 1 & 1 \\
+            \hline
+            1 & 1 & 0 & 1 & 0 & 0 \\
+            \hline
+            1 & 1 & 1 & 1 & 1 & 1 \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+\end{multicols}
+
+
+
+\problempart{b}
+If A is false, P := false$\rightarrow$(B$\rightarrow$C), which is always true.
+Also, Q := (false$\rightarrow$B)$\rightarrow$(false$\rightarrow$C), which is
+true$\rightarrow$true which is true. Therefore P = Q = true when A is false.
+\newline
+\newline
+If A is true, P := true$\rightarrow$(B$\rightarrow$C) which is P := B$\rightarrow$C
+\newline
+Q := (false$\rightarrow$B)$\rightarrow$(false$\rightarrow$C) which equals
+Q := B$\rightarrow$C
+\newline
+Therefore Q = P = B$\rightarrow$C when A is true.
+
+\problem{3}{David Santana, Riley Davis}
+
+\problempart{a}
+
+\[
+\forall n \exists a \exists b \exists c \exists d. n = a^2+b^2+c^2+d^2
+\]
+
+\problempart{b}
+\[
+\forall n \exists a \exists b \exists c. (n > 2) \land (n = 2*a) \land (n = b + c) \land \text{isPrime}(b) \land \text{isPrime}(c)
+\]
+
+\problempart{c}
+\[
+\forall n \exists x \exists y \exists z.(n>2) \land (x^n+y^n=z^n)
+\]
+
+\problempart{d}
+\[
+\forall n \exists a. \text{isPrime}(n) \land (a > n) \land \text{isPrime}(a)
+\]
+\problempart{e}
+\[
+\forall n \exists a. (n>1) \land (n < a < 2*n) \land \text{isPrime}(a)
+\]
+\end{document}
+

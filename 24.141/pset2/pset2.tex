@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{24.141 PSet 2}
+\author{Miguel Flores-Acton}
+\date{\today}
+\maketitle
+
+\section*{Collaborators}
+Filipe Abreu
+\newline
+Tyler Procor
+
+\section*{Q1}
+\noindent $"\psi"$ is a sentence letter by itself and can be inferred as just what it
+evaluates to.
+
+\noindent $\ulcorner\lnot \psi\urcorner$ is multiple sentence letters, so we have to use corner quotes
+to emphasize that we want the value of the sentence letters as an expression, not the raw letters. 
+
+\section*{Q2}
+\noindent "Sam is flying to Europe" is a sentence and is an expression.
+
+\noindent "Sam" is "flying to Europe is a sentence" and is an expression.
+
+\noindent "Sam" is "flying to Europe is a sentence and is an expression".
+
+\section*{Q3}
+\subsection*{A}
+\noindent $\phi \lor \psi$ := $\neg(\neg \phi \land \neg \psi)$
+\subsection*{B}
+\noindent $\phi \rightarrow \psi$ := $\neg (\phi \land \neg \psi)$
+\subsection*{C}
+\noindent $\phi \leftrightarrow \psi$ := $\neg(\neg (\phi \land \psi) \land \neg (\neg \phi \land \neg \psi))$
+
+\section*{Q4}
+\subsection*{A}
+\begin{tabular}{|c|c|c|}
+\hline
+$\phi$ & $\psi$ & $\phi \uparrow \psi$ \\ \hline
+0 & 0 & 1 \\ \hline
+0 & 1 & 1 \\ \hline
+1 & 0 & 1 \\ \hline
+1 & 1 & 0 \\ \hline
+\end{tabular}
+
+\subsection*{B}
+\noindent $\phi \land \psi$ := $(\phi \uparrow \psi) \uparrow (\phi \uparrow \psi)$
+
+\noindent $\lnot \phi$ := $\phi \uparrow \phi$
+
+\subsection*{C}
+This operator is non-homophonic and also a strange truth table. Also, on top of that,
+writing some operations feels quite redundant like $\phi \uparrow \phi$ to get a negation.
+This would just make it a headache to work with, making sentences longer and less intuitive
+to understand their meaning.
+
+\section*{Q5}
+\subsection*{A}
+\noindent $V_I(\varphi \lor \psi) = V_I(\varphi) + V_I(\psi)$
+
+\noindent $V_I(\varphi \rightarrow \psi) = 1 - (V_I(\varphi) \times (1 - V_I(\psi)))$
+
+\noindent $V_I(\varphi \lor \psi) = (V_I(\varphi) \times V_I(\psi)) + ((1 - V_I(\varphi)) \times (1 - V_I(\psi)))$
+
+\subsection*{B}
+Since the semantics above are derived from homophonic operators, then
+they can be decomposed to homophonic operators by substitution and are therefore
+homophonic in disguise. 
+
+
+\end{document}

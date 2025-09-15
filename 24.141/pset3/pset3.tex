@@ -1,0 +1,204 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+ 
+\usepackage{amsmath,colonequals,amssymb} %for align* environment and gather*
+\usepackage{enumitem} %%Enables control over enumerate and itemize environments
+\usepackage{tcolorbox}
+ 
+\newcommand{\corner}[1]{\ulcorner#1\urcorner} %%Corner quotes
+\newcommand{\concat}[2]{{#1}{\raisebox{4pt}{\smallfrown}}{#2}} %%Corner quotes
+\newcommand{\tuple}[1]{\langle#1\rangle} %%Corner quotes
+\renewcommand{\vert}[1]{\lvert#1\rvert}
+\newcommand{\set}[1]{\lbrace#1\rbrace} %%Corner quotes
+\newcommand{\I}{\mathcal{I}} %%
+\newcommand{\J}{\mathcal{J}} %%
+\newcommand{\N}{\mathbb{N}} %%
+\newcommand{\PL}{\mathcal{L}^{\textsc{pl}}} %%
+\newcommand{\FOL}{\mathcal{L}^{\textsc{fol}}} %%
+\newcommand{\length}{\texttt{Length}} %%
+\newcommand{\comp}{\texttt{Comp}} %%
+\newcommand{\V}[1]{\mathcal{V}_{#1}} %%
+
+% Define the \answer{} command
+\newcommand{\answer}[1]{%
+  \par\noindent
+  \begin{tcolorbox}[colback=gray!10, colframe=gray!80, title=Proof]
+    #1
+  \end{tcolorbox}
+}
+\newcommand{\factoidbox}[1]{\begin{quote}\framebox{\parbox{\dimexpr\linewidth-3\fboxsep\relax}{#1}}\end{quote}}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+  \Large Problem Set 3\\[1ex] 
+  Due Friday, September 27th by 5pm
+  \vspace{.15in}
+
+  \normalsize{(10 points per question. Please scan and upload to Canvas as a PDF)}\\[3ex] 
+\end{center}
+
+Question 0: If you worked with up to two classmates, please list their names! 
+
+\begin{enumerate}
+  \item For each of the following examples, complete the following tasks:
+  \begin{enumerate}
+    \item[\it Task 1:] Regiment the following argument in $\PL$.
+    \item[\it Task 2:] Then, evaluate the resulting $\PL$ argument by either writing a semantic proof that it is valid, or else specifying truth values for the sentence letters and proving that the argument is invalid.
+    \item \textit{If the lawyer did it, then the doctor did not. Therefore, if the doctor did it, then the lawyer did not.} ($B$ = the lawyer did it; $G$ = the doctor did it.)
+      % NOTE: you can uncomment this block by removing the '%' signs, using this to answer the questions
+      \answer{
+        \begin{align*}
+          B\rightarrow\lnot G \models G\rightarrow\lnot B
+        \end{align*}
+
+        \begin{enumerate}[label=\arabic*.]
+          \item $B\rightarrow\lnot G$ :PR
+          \item \qquad $G$ :AS
+          \item \qquad $\lnot B$ :1,2$\rightarrow$E
+          \item $G\rightarrow\lnot B$ :2-3 $\rightarrow$I
+        \end{enumerate}
+      
+        Argument is valid
+      }
+    \item \textit{Na\"ive realism is false. This is because if na\"ive realism were true, then na\"ive realism would be false.} ($R$ = na\"ive realism is true.)
+      % % NOTE: ditto
+      \answer{
+        \begin{align*}
+          R\rightarrow\lnot R \models \lnot R
+        \end{align*}
+        % \begin{tabular}{|c|c|c|}
+        %   \hline
+        %   $R$ & $R\rightarrow\lnot R$ & $\lnot R$ \\ \hline
+        %   0 & 1 & 1 \\ \hline
+        %   1 & 0 & 0 \\ \hline
+        % \end{tabular}
+        \begin{enumerate}[label=\arabic*.]
+          
+          \item $R\rightarrow\lnot R$ :PR
+          \item \qquad $R$ :AS
+          \item \qquad $\lnot R$ :1,2 $\rightarrow$E
+          \item $\lnot R$ :2-3 $\lnot$I
+        \end{enumerate}
+
+        Argument is valid
+      }
+  \end{enumerate}
+  \item Write a semantic proof that the following is a tautology.
+    \begin{enumerate}
+      \item $\big( ( P \vee Q) \wedge (P \vee R) \big) \rightarrow \big (P \vee (Q \wedge R) \big ) $
+    \end{enumerate}
+    \answer{
+      % \begin{enumerate}[label=\arabic*.]
+      %   \item $( P \vee Q) \wedge (P \vee R)$ :PR
+      %   \item $( P \vee Q)$ :1 $\wedge$E
+      %   \item $( P \vee R)$ :1 $\wedge$E
+      %   % \item \qquad $\lnot P$ :AS
+      %   % \item \qquad $Q :2,4\land E$
+      %   % \item \qquad $R :3,4\land E$
+      % \end{enumerate}
+
+      \begin{tabular}{|c|c|c|c|}
+          \hline
+          $P$ & $Q$ & $R$ & $(P\vee Q)\wedge(P\vee R)\rightarrow P\vee (Q\wedge R)$ \\ \hline
+          0 & 0 & 0 & 1 \\ \hline
+          0 & 0 & 1 & 1 \\ \hline
+          0 & 1 & 0 & 1 \\ \hline
+          0 & 1 & 1 & 1 \\ \hline
+          1 & 0 & 0 & 1 \\ \hline
+          1 & 0 & 1 & 1 \\ \hline
+          1 & 1 & 0 & 1 \\ \hline
+          1 & 1 & 1 & 1 \\ \hline
+      \end{tabular}
+      \smallbreak
+      It is a tautology because it is true for all values
+
+    %   \begin{enumerate}[label=\arabic*.]
+    %       \item $(P \vee Q) \wedge (P \vee R)$ :PR  % Main assumption
+    % \begin{itemize}
+    %     \item $(P \vee Q)$ :1 $\wedge$E  % Extracting from the conjunction
+    %     \item $(P \vee R)$ :1 $\wedge$E  % Extracting from the conjunction
+    % \end{itemize}
+    % \item \quad P :as  % Assuming P is true
+    % \item \quad \quad $P \vee (Q \wedge R)$ :$\vee$I % Conclusion from assumption of P
+    % \item \quad $\neg P$ :as  % Assuming P is false
+    % \begin{itemize}
+    %     \item \quad \quad $Q$ :2 $\vee$E  % Extracting Q from the disjunction P ∨ Q
+    %     \item \quad \quad $R$ :3 $\vee$E  % Extracting R from the disjunction P ∨ R
+    %     \item \quad \quad $(Q \wedge R)$ :$\wedge$I  % Combining Q and R
+    %     \item \quad \quad $P \vee (Q \wedge R)$ :$\vee$I  % Conclusion from assumption of ¬P
+    % \end{itemize}
+    % \item $P \vee (Q \wedge R)$ :$\vee$E  % Final conclusion from the cases
+    % \end{enumerate}
+
+      % \begin{align*}
+      %   1. &( P \vee Q) \wedge (P \vee R) &\text{:PR} \\
+      %   2. &( P \vee Q) &\text{:1}
+      % \end{align*}
+    }
+  \item Appeal to the definitions in order to prove the following lemmas from the book.
+    \begin{enumerate}
+      \item {\bf Lemma 2.1} If $\Gamma \vDash \varphi$, then $\Gamma \cup \Sigma \vDash \varphi$.
+        % % NOTE: ditto
+        \answer{
+          $\Gamma \vDash \varphi$ means that $\Gamma$ entails $\varphi$ meaning that if all the
+          premisis in $\Gamma$ are true, then the premis $\varphi$ must be true.
+          For every premisis in $\Sigma$ that is added, it only has the possibility to reduce the
+          set of combinations of the sentence letters which make $\varphi$ true. Therefore $\varphi$
+          must still be entailed in the union set.
+        }
+      \item {\bf Lemma 2.3} $\Gamma \vDash \varphi$ just in case $\Gamma \cup \set{\neg \varphi}$ is unsatisfiable.
+        % % NOTE: ditto
+        \answer{
+
+          % Γ⊨φ, then Γ∪{¬φ}Γ∪{¬φ}
+          % Γ∪{¬φ}Γ∪{¬φ}, then Γ⊨φ
+
+          If $\Gamma \vDash \varphi$, then there is never a case when $\Gamma$ is true and $\varphi$ is false.
+          However if we add $\lnot \varphi$ to $\Gamma$, there will now be a case when $\Gamma$ is true
+          in which $\varphi$ is asserted to False in the premisis and $\varphi$ will be true on the proposition.
+          This means that $\Gamma \vDash \varphi$ in the case $\Gamma \cup \set{\neg \varphi}$ would be unsatisfiable.
+        }
+    \end{enumerate}
+  
+  \item 
+    Recall the definition of the interpretation set $\vert{\varphi} \colonequals \set{\I : \V{\I}(\varphi) = 1}$ from the book, proving each of the following claims for arbitrary wfss $\varphi$ and $\psi$ of $\PL$:
+    \begin{enumerate}
+      \item $\vert{\varphi \wedge \psi} = \vert{\varphi} \cap \vert{\psi}$.\footnote{$\vert{\varphi} \cap \vert{\psi} \colonequals \set{\I : \I \in \vert{\varphi} \text{ and } \I \in \vert{\psi}}$ is the intersection of the interpretation sets $\vert{\varphi}$ and $\vert{\psi}$.}
+        % % NOTE: ditto
+        \answer{
+          We can define $\vert{\varphi \wedge \psi} \colonequals \set{\I : \V{\I}(\varphi \wedge \psi) = 1}$\\
+          and since we know that $\V{\I}(\varphi \wedge \psi) = 1$ is true if $\V{\I}(\varphi) = 1$ and
+          $\V{\I}(\psi) = 1$ is true, we can use the definistion of $\vert{\varphi} \colonequals \set{\I : \V{\I}(\varphi) = 1}$\\
+          for both $\varphi$ and $\psi$ to rise to the conclusion that it means that $\vert{\varphi} \cap \vert{\psi}$.
+        }
+      \item $\vert{\varphi \vee \psi} = \vert{\varphi} \cup \vert{\psi}$.\footnote{$\vert{\varphi} \cup \vert{\psi} \colonequals \set{\I : \I \in \vert{\varphi} \text{ or } \I \in \vert{\psi}}$ is the union of the interpretation sets $\vert{\varphi}$ and $\vert{\psi}$.}
+        % % NOTE: ditto
+        \answer{
+          Just like before, we can define $\vert{\varphi \vee \psi} \colonequals \set{\I : \V{\I}(\varphi \vee \psi) = 1}$\\
+          and since we know that $\V{\I}(\varphi \vee \psi) = 1$ is true if $\V{\I}(\varphi) = 1$ or
+          $\V{\I}(\psi) = 1$ is true, we can use the definistion of $\vert{\varphi} \colonequals \set{\I : \V{\I}(\varphi) = 1}$\\
+          for both $\varphi$ and $\psi$ to rise to the conclusion that it means that $\vert{\varphi} \cup \vert{\psi}$.
+        }
+      \item $\vert{\neg \varphi} = \vert{\varphi}^c$.\footnote{$\vert{\varphi}^c \colonequals \set{\I : \I \notin \vert{\varphi}}$ is the complement within the set of all $\PL$ interpretations.}
+        % % NOTE: ditto
+        \answer{
+          We know that $\vert{\lnot \varphi} \colonequals \set{\I : \V{\I}(\lnot \varphi) = 1}$ \\
+          and that means $\vert{\lnot \varphi} \colonequals \set{\I : \V{\I}(\varphi) = 0}$ \\
+          and that is the definition of $\vert{\varphi}^c$
+        }
+    \end{enumerate}
+  \item Prove that $\varphi, \psi \vDash \chi$ just in case $\vDash (\varphi \wedge \psi) \rightarrow \chi$. 
+    % % NOTE: ditto
+    \answer{
+      $\vDash (\varphi \wedge \psi) \rightarrow \chi$ means that for every case in which $\varphi$ and  $\psi$ are both true
+      $\chi$ must be true as well. $\varphi, \psi \vDash \chi$ also means the same thing, where now $\varphi$ and $\psi$ are
+      premisis but also both be true for $\chi$ to be true.
+    }
+\end{enumerate}
+
+\end{document}

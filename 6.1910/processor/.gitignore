@@ -1,0 +1,53 @@
+# build files
+*.so
+*.bo
+buildDir/*
+synthDir/*
+sw/build
+sw/mnist/*.vmh
+sw/mnist/*.o
+sw/mnist/*.riscv
+sw/mnist/*.out
+sw/mnist/*.dump
+sw/mnist/src/model.c
+sw/mnist/src/mul.h
+__pycache__/
+
+# sw copy file
+sw/mnist/src/model.c
+sw/mnist/src/mul.h
+
+# test files
+Processor
+DirectMappedBeverenTest
+TwoWayBeverenTest
+test_DirectMappedBeveren
+test_DirectMappedMicrotest
+test_TwoWayBeveren
+test_TwoWayMicrotest
+test_helper
+debug_*
+
+# Minispec temp directories
+tmp_msc_*
+
+# editor swap files
+*.sw*
+*~
+
+# Test results
+test_out/
+result.txt
+
+# Always ignore these files.
+*.bsv
+*.html
+*.svg
+*.v
+*.log
+mem.vmh
+
+# Do not ignore these files.
+!FeedLFSR.bsv 
+!GenericRandomizer.bsv 
+!SRAMArray.bsv

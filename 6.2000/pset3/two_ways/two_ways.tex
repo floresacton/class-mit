@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\begin{document}
+
+\title{Two Ways}
+\author{}
+\date{\today}
+
+\maketitle
+
+\section*{1.}
+\subsection*{Superposition}
+\noindent When only the voltage source is connected and the current source is set to 0A,
+we can think of it as the current source is disconnected. This makes just 3 resistors in
+series which their equivalent resistance is $R_{eq}=R_1+R_2+R_3$.
+
+\noindent Therefore the current through the resistors is $I=V_s/(R_1+R_2+R_3)$
+
+\noindent Multiplying the current times the resistances, we get that
+
+\noindent $e_1=(V_s\times(R_2+R_3))/(R_1+R_2+R_3)$, and that
+$e_2=(V_s\times R_3)/(R_1+R_2+R_3)$
+
+\noindent Now calculating the circuit if $V_s=0$ the equivalent resistance is
+$R_{eq}=R_1||(R_2+R_3)$ which expanded makes $1/(1/R_1+1/(R_2+R_3))$.
+
+\noindent Therefore
+$e_1=I_s/(1/R_1+1/(R_2+R_3))$, simplifying to
+
+\noindent $e_1=(I_s\times R_1\times R_2\times R_3)/((R_2\times R_3)+R_1)$
+
+\noindent Since $e_2=(e_1\times R_3)/(R_2+R_3)$ we can substitute
+$e_1$ to get the equation
+$e_2=(I_s\times R_1\times R_2\times {R_3}^2\times (R_2+R_3))/((R_2\times R_3)+R_1)$.
+
+\noindent Combining both of these, we get that\newline
+$e_1=(V_s\times(R_2+R_3))/(R_1+R_2+R_3)+(I_s\times R_1\times R_2\times R_3)/((R_2\times R_3)+R_1)$
+$e_2=(V_s\times R_3)/(R_1+R_2+R_3)+(I_s\times R_1\times R_2\times {R_3}^2\times (R_2+R_3))/((R_2\times R_3)+R_1)$
+
+\subsection*{Nodal}
+
+With nodal analysis, we can come up with the two equations because we have two unknowns.
+$(V_s-e_1)/R_1+I_s+(e_2-e_1)/R_2=0$ and $e_2/R_3=(e_1-e_2)/R_2$
+
+Solving these two equations with some algebra gets us the solutions:\newline
+$e_1=(R_2\times V_s+I_s\times R_1\times R_2)/((R_1+R_2)-(R_1\times R_2)/(R_2+R_3))$\newline
+$e_2=(R_2\times R_3\times (V_s+I_s\times R_1))/((R_2+R_3)\times((R_2+R_1)-(R_1\times R_3)/(R_2+R_3)))$
+
+\subsection*{Equivalence}
+
+Rearanging the equations from the node and superposition analysis, they are the same.
+
+\section*{2.}
+
+\subsection*{Superposition}
+Calculating when only $I_1$ is connected, we first find the equivalent resistance
+for the circuit, which is $R_{eq}=75\Omega||150\Omega=50\Omega$
+
+\vspace*{1em}
+\noindent That means that $e_1=I_1\times 50$ and then we can treat each pair of resistors as
+voltage dividers to calculate $e_2$ and $e_3$
+
+\vspace*{1em}
+\noindent Therefore we get\newline
+$e_2=(I_1\times 50\times 45)/75=I_1\times 30$ and $e_3=(I_1\times 50)/2=I_1\times 25$
+
+\vspace*{1em}
+\noindent Calculating when only $I_2$ is connected, we can first calculate the current divider
+
+\vspace*{1em}
+\noindent Current through the bottom will be $I_2\times(105/225)=I_2\times(7/15)$\newline
+Current through the top will be $I_2\times(120/225)=I_2\times(8/15)$
+
+\vspace*{1em}
+\noindent This means $e_3=75\times I_2\times(7/15)=I_2\times35$ and \newline
+$e_2=-45\times I_2\times(7/15)=-I_2\times21$
+
+\vspace*{1em}
+\noindent Refrencing $e_1$ from $e_3$ we can calculate\newline
+$e_1=I_2\times35-75\times I_2\times(8/15)$ and simplifying\newline
+$e_1=-I_2\times5$
+
+\vspace*{1em}
+\noindent Adding up the superpositions of $I_1$ and $I_2$ we get:\newline
+$e_1=50I_1-5I_2$\newline
+$e_2=30I_1-21I_2$\newline
+$e_3=25I_1+35I_2$
+
+\subsection*{Nodal}
+Calculating with nodal analysis:\newline
+$(e_1-e_2)/30=I_2+e_2/45$ and $(e_1-e_3)/75+I_2=e_3/75$ and \newline
+$I_1=(e_1-e_2)/30+(e_1-e_3)/75$
+
+\vspace*{1em}
+\noindent After solving with algebra:\newline
+$e_1=50I_1-5I_2$\newline
+$e_2=30I_1-21I_2$\newline
+$e_3=25I_1+35I_2$
+
+\subsection*{Equivalence}
+These are the same
+
+\end{document}

@@ -1,0 +1,157 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+ 
+\usepackage{amsmath,colonequals,amssymb} %for align* environment and gather*
+\usepackage{enumitem} %%Enables control over enumerate and itemize environments
+\usepackage{tcolorbox}
+ 
+\newcommand{\corner}[1]{\ulcorner#1\urcorner} %%Corner quotes
+\newcommand{\concat}[2]{{#1}{\raisebox{4pt}{\smallfrown}}{#2}} %%Corner quotes
+\newcommand{\tuple}[1]{\langle#1\rangle} %%Corner quotes
+\renewcommand{\vert}[1]{\lvert#1\rvert}
+\newcommand{\set}[1]{\lbrace#1\rbrace} %%Corner quotes
+\newcommand{\I}{\mathcal{I}} %%
+\newcommand{\J}{\mathcal{J}} %%
+\newcommand{\N}{\mathbb{N}} %%
+\newcommand{\PL}{\mathcal{L}^{\textsc{pl}}} %%
+\newcommand{\FOL}{\mathcal{L}^{\textsc{fol}}} %%
+\newcommand{\FI}{\mathcal{L}^=} %%
+\newcommand{\length}{\texttt{Length}} %%
+\newcommand{\comp}{\texttt{Comp}} %%
+\newcommand{\simp}{\texttt{Simple}} %%
+\newcommand{\V}[1]{\mathcal{V}_{#1}} %%
+\newcommand{\VV}[2]{\mathcal{V}_{#1}^{#2}} %%
+\newcommand{\val}[2]{\mathscr{v}_{#1}^{#2}} %%
+\newcommand{\va}[1]{\hat{#1}} %%
+\renewcommand{\v}[1]{\mathbf{#1}} %%
+
+% Define the \answer{} command
+\newcommand{\answer}[1]{%
+  \par\noindent
+  \begin{tcolorbox}[colback=gray!10, colframe=gray!80, title=Proof]
+    #1
+  \end{tcolorbox}
+}
+\newcommand{\factoidbox}[1]{\begin{quote}\framebox{\parbox{\dimexpr\linewidth-3\fboxsep\relax}{#1}}\end{quote}}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+  \Large Problem Set 9\\[1ex] 
+  Due Friday, November 8th by 5pm
+  \vspace{.15in}
+
+  \normalsize{(20 points per question. Please scan and upload to Canvas as a PDF)}\\[3ex] 
+\end{center}
+
+If you worked with up to two classmates, please list their names.
+
+\bigskip
+
+\textbf{Note:} Complete the following steps for two of the following three problems given below:
+
+\bigskip
+
+\begin{enumerate}
+  \item[(I)] Regiment the argument in $\FI$. (5pts)
+  \item[(II)] State whether the argument is valid or invalid. (5pts) 
+  \item[(III)] If the argument is invalid, provide a countermodel along with a semantic argument that proves that the argument is invalid. If the argument is valid, provide a semantic argument that proves that it is valid. (10pts)
+\end{enumerate}
+
+\bigskip
+
+\begin{enumerate}
+
+  \item	Hesperus is rising. Hesperus is Phosphorus. Therefore Phosphorus is rising.
+    % NOTE: you can uncomment this block by removing the '%' signs, using this to answer the questions
+    \answer{
+      \begin{flushleft}
+        (I) \\
+        $Rx$: $x$ is rising \\
+        Hesperus = $h$ \\
+        Phosphorus = $p$ \\
+        
+        \bigskip
+        
+        $Rh$ \\
+        $h=p$ \\
+        --------------- \\
+        $Rp$
+    \end{flushleft}
+      (II) Argument is valid
+      \bigskip
+      
+      (III) Proof:
+      \begin{enumerate}[label=\arabic*.]
+        \item Let M = $\set{\mathbf{D}, I}$ be a $\FOL$ model where $V_I(h=p) = 1$ and $V_I(Rh) = 1$.
+        \item It follows by Lemma 9.2 that $V_I^{\hat{a}}(Rh) = 1$ and $V_I^{\hat{a}}(h=p) = 1$
+      \end{enumerate}
+      % \begin{enumerate}[label=\arabic*.]
+      %   \item Assume a $\FOL$ model $M=\set{\mathbb{D},I}$ where $V_I(Ll)=1$.
+      %   \item It follows that $\set{l} \in I(L)$ and $\set{l} \in \mathbb{D}^1$ and $l \in \mathbb{D}$
+      %   \item Considering some v.a. $\hat{a}$ where $\hat{a}(x)=l$
+      %   then $Ll \rightarrow \lnot Bl$ and therefore
+      %   $V_I(Ll) \rightarrow V_I(\lnot Bl)$.
+      %   \item Knowing that $V_I(Ll)=1$ in our model, we know that $1 \rightarrow V_I(\lnot Bl)$
+      %   \item Based on the semantics of $\rightarrow$ we then know that the previous expression
+      %   equates to $V_I(\lnot Bl)$
+      %   \item Therefore we can conlude that $\lnot Bl$ is proven by the premises $\square$
+      % \end{enumerate}
+        
+        % \begin{align*}
+        %   S &= 1 + 2 + 3 + \cdots + (n-1) + n \\
+        %   S &= n + (n-1) + (n-2) + \cdots + 2 + 1 \\
+        %   2S &= (1+n) + (2 + (n-1)) + (3 + (n-2)) + \cdots + (n + 1) \\
+        %   2S &= (n+1) + (n+1) + (n+1) + \cdots + (n+1) \\
+        %   2S &= n(n+1) \\
+        %   S &= \frac{n(n+1)}{2}
+        % \end{align*}
+
+        % \begin{align*}
+        %   \VV{\I}{\va{a}}(\varphi) = 1
+        %     ~~\textit{iff}~~  & \VV{\I}{\va{a}}(\qt{\forall}{\gamma} \psi) = 1\\
+        %     ~~\textit{iff}~~  & \VV{\I}{\va{e}}(\psi) = 1 \text{ for every $\gamma$-variant } \va{e} \text{ of } \va{a}\\
+        %     (\star) ~~\textit{iff}~~  & \VV{\I}{\va{e}}(\psi) = 1 \text{ for every $\gamma$-variant } \va{e} \text{ of } \va{c}\\
+        %     ~~\textit{iff}~~  & \VV{\I}{\va{c}}(\qt{\forall}{\gamma} \psi) = 1\\
+        %     ~~\textit{iff}~~  & \VV{\I}{\va{c}}(\varphi) = 1.
+        % \end{align*}
+    }
+  \item	If the king of France is bald, then there is a king of France. But there is no king of France. Therefore the king of France is not bald.
+  \item Alcibiades and Credo both love Socrates. Therefore Socrates has at least two lovers.
+  \answer{
+    \begin{flushleft}
+      (I) \\
+      $Lxy$: $x$ loves $y$ \\
+      Alcibiades = $a$ \\
+      Credo = $c$ \\
+      Socrates = $s$ \\
+      
+      \bigskip
+      
+      $Las \land Lcs$ \\
+      --------------- \\
+      $(\exists x) (\exists y) ((Lxs \land Lys) \land \lnot x=y)$
+  \end{flushleft}
+    (II) Argument is valid
+    \bigskip
+    
+    (III) Proof:
+  }
+\end{enumerate}
+
+\bigskip
+
+\textbf{Hints:} Remember...
+
+\begin{enumerate}
+  \item Officially the extension of $1$-place predicates is a set of $1$-tuples.
+  \item Your semantic proofs ought to appeal to the semantic clauses. Avoid skipping steps in your semantic proofs.
+\end{enumerate}
+
+
+
+\end{document}

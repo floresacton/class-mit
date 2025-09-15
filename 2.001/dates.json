@@ -1,0 +1,20 @@
+[
+  {
+    "event": "Quiz 1",
+    "date": "2025-03-10",
+    "time": "11:00-12:00",
+    "location": "45-230"
+  },
+  {
+    "event": "Quiz 2",
+    "date": "2025-04-16",
+    "time": "11:00-12:00",
+    "location": "45-230"
+  },
+  {
+    "event": "Final Exam",
+    "date": "TBD",
+    "time": "TBD",
+    "location": "TBD"
+  }
+]

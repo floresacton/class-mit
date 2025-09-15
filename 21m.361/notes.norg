@@ -1,0 +1,84 @@
+* General
+ ** Electro-acoustic transduction
+    *Transducer -> preamplifier -> amplifier -> speaker*
+
+  *** Types of Transducer
+      - Condensor microphone (environments or string instruments)
+      - Dynamic microphone (something close) (for loud stuff)
+      - Speakers
+
+  *** Signal Levels
+      - Mic level
+      - Instrument level
+      - Line level
+      - Speaker level
+
+** Tips
+   - Change filters to create rythm
+
+* Sythesis
+** Analog Synth
+   *Source -> Treatment -> Output*
+   *Gates / Triggers / Clocks*
+
+*** Oscillator
+    *1V / octive*
+
+    - Sine
+    - Square
+    - Saw
+    - Triangle
+
+*** Filter
+    - Low pass
+    - High pass
+    - Band pass
+   
+   *Equalizer (combined multiple filters)*
+   *Sound -> Spectral Shape -> Amplitude*
+   
+*** VCA (Voltage Controller Amplifier)
+*** LFO (Low Frequency Oscillator)
+*** Envelope
+    - Signal that controls amplitude of sound
+
+**** ADSR (emulate a piano & other instruments)
+     - Attack time
+     - Decay time
+     - Sustain time & value
+     - Release time
+
+*** Noise / Random
+    - Modifying waveform
+    - Source waveform
+
+* Music Description
+  - Beats faster type
+  - Voice higher pitch (reverb delay) with pauses
+  - Fade-ins between things
+  - Slower voice transition into beat
+  - Drum snare kinda feel alternating notes
+  - 1/2 and quarter bass beats which are softer
+  - Pauses
+  - Change in feeling from fast to slow more vocal
+  - Midi simple notes and soft faster behind bass
+  - increasing voltume on the buildup
+  - double bass hit into beat change
+  - faster of beats in the pauses
+  - pulese with reverb
+  - buildup back to the beginning
+  - ending with one note
+
+** Map
+*** Start
+    - beat
+    - pitch (higher frequency)
+    - drum
+    - bass (sustained)
+
+* Time
+  - Accelerando
+  - Retardando
+  - A Temp (return to temporal feeling)
+  - Allegro
+  - Vivace

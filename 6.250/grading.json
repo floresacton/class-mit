@@ -1,0 +1,22 @@
+[
+  {
+    "type": "Participation",
+    "percent": 0.05
+  },
+  {
+    "type": "Homework",
+    "percent": 0.25
+  },
+  {
+    "type": "Project",
+    "percent": 0.2
+  },
+  {
+    "type": "Midterm",
+    "percent": 0.2
+  },
+  {
+    "type": "Final",
+    "percent": 0.3
+  }
+]
